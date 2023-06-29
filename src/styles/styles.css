@@ -1,0 +1,35 @@
+:root {
+    /*Light theme*/
+    --bg-light : #f8f8f8 ;
+    --bg-light-secondary: #ecedec;
+    --bg-light-terciary: #2abd67;
+    --text-light : #374958;
+    
+    /*Night theme*/
+    --bg-dark:#192734;
+    --bg-dark-secondary: #15202b;
+    --bg-dark-terciary: #1f8d4d;
+    --header-dark : #22303c;
+    --text-dark : #eaebec;
+    /*Does not change*/
+    --placeholder :#76797e;
+    --danger : #c51e1e;
+
+    --bg-primary : var(--bg-dark);
+    --bg-secondary : var(--bg-dark-secondary);
+    --bg-terciary : var(--bg-dark-terciary);
+    --text :var(--text-dark);
+    
+}
+
+header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--header-dark);
+    font-size:2.5rem;
+    padding:10px 20px;
+    font-weight: 900;
+    border-bottom: solid 2px var(--bg-dark-terciary);
+}
