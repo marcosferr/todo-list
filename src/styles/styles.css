@@ -1,35 +1,207 @@
 :root {
-    /*Light theme*/
-    --bg-light : #f8f8f8 ;
-    --bg-light-secondary: #ecedec;
-    --bg-light-terciary: #2abd67;
-    --text-light : #374958;
-    
-    /*Night theme*/
-    --bg-dark:#192734;
-    --bg-dark-secondary: #15202b;
-    --bg-dark-terciary: #1f8d4d;
-    --header-dark : #22303c;
-    --text-dark : #eaebec;
-    /*Does not change*/
-    --placeholder :#76797e;
-    --danger : #c51e1e;
+  /*Light theme*/
+  --bg-light: #f8f8f8;
+  --bg-light-secondary: #ecedec;
+  --bg-light-terciary: #2abd67;
+  --text-light: #374958;
 
-    --bg-primary : var(--bg-dark);
-    --bg-secondary : var(--bg-dark-secondary);
-    --bg-terciary : var(--bg-dark-terciary);
-    --text :var(--text-dark);
-    
+  /*Night theme*/
+  --bg-dark: #192734;
+  --bg-dark-secondary: #15202b;
+  --bg-dark-terciary: #1f8d4d;
+  --header-dark: #22303c;
+  --text-dark: #eaebec;
+  /*Does not change*/
+  --placeholder: #76797e;
+  --danger: #c51e1e;
+}
+.theme-light {
+  --bg-primary: var(--bg-light);
+  --bg-secondary: var(--bg-light-secondary);
+  --bg-terciary: var(--bg-light-terciary);
+  --text: var(--text-light);
 }
 
+.theme-dark {
+  --bg-primary: var(--bg-dark);
+  --bg-secondary: var(--bg-dark-secondary);
+  --bg-terciary: var(--bg-dark-terciary);
+  --text: var(--text-dark);
+}
+/*The Switch*/
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+/* Hide default HTML checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 40px;
+  width: 40px;
+  left: 0px;
+  bottom: 4px;
+  top: 0;
+  bottom: 0;
+  margin: auto 0;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+  box-shadow: 0 0px 15px #2020203d;
+  background: white url("https://i.ibb.co/FxzBYR9/night.png");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+input:checked + .slider {
+  background-color: #2196f3;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196f3;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(24px);
+  -ms-transform: translateX(24px);
+  transform: translateX(24px);
+  background: white url("https://i.ibb.co/7JfqXxB/sunny.png");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+/*own css*/
+body {
+  color: var(--text);
+}
 header {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    background-color: var(--header-dark);
-    font-size:2.5rem;
-    padding:10px 20px;
-    font-weight: 900;
-    border-bottom: solid 2px var(--bg-dark-terciary);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--bg-primary);
+  font-size: 2.5rem;
+  padding: 10px 20px;
+  font-weight: 900;
+  border-bottom: solid 2px var(--bg-terciary);
+}
+#menu-btn {
+  padding: 10px;
+}
+#menu-btn:hover {
+  background-color: #2b435a;
+  cursor: pointer;
+}
+article {
+  display: flex;
+  width: 100vw;
+  background-color: var(--bg-primary);
+  height: 1000px;
+}
+.sidebar {
+  height: 1000px;
+  width: 0px;
+
+  background-color: var(--bg-secondary);
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+}
+.task-container {
+  transition: margin-left 0.5s;
+}
+
+.open-sidebar {
+  width: 400px;
+
+  padding: 20px 40px;
+}
+
+.group-container {
+  font-size: 1.25rem;
+  padding: 1rem 0;
+}
+.section-title {
+  font-size: 1.5rem;
+}
+
+.report {
+  display: flex;
+  padding: 0.5rem 2rem;
+
+  justify-content: flex-start;
+}
+.report i {
+  margin-right: 0.5rem;
+}
+.option-container {
+  display: flex;
+  gap: 20px;
+  flex-direction: column;
+}
+
+.report:hover,
+.project:hover {
+  background-color: var(--bg-primary);
+}
+.report.active,
+.project.active {
+  background-color: var(--bg-terciary);
+  border-left: 4px solid gray;
+}
+
+#task-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 2rem 3rem;
+  width: 100%;
+}
+
+.title {
+  font-size: 3rem;
+  padding: 2rem;
+  background-color: var(--bg-terciary);
+}
+.options {
+  margin-left: auto;
+}
+.project {
+  display: flex;
+  justify-content: start;
+  padding: 0.5rem 0;
+}
+.project i {
+  padding: 0 10px;
+}
+.projects-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
