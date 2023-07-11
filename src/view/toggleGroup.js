@@ -1,16 +1,17 @@
-const sections = document.querySelectorAll(".report");
 let current = null;
+let sections = null;
+
 function select(event) {
   current ? current.classList.remove("active") : null;
   current = event.target;
   event.target.classList.add("active");
 }
 
-function init() {
+function init(group) {
+  sections = document.querySelectorAll(group);
   sections.forEach((section) => {
     section.addEventListener("click", select);
   });
 }
 
-init();
 export default { init };

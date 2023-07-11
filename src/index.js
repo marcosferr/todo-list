@@ -1,13 +1,10 @@
 import "./styles/reset.css";
 import "./styles/styles.css";
-import toggle from "./toggleFilters.js";
+import toggle from "./view/toggleGroup.js";
+import { setTitle } from "./view/viewController";
+toggle.init(".toggle-group");
 // import json from './data.json5';
 
-const sectionTitle = document.createElement("div");
-sectionTitle.classList.add("title");
-sectionTitle.innerHTML = "All Tasks";
-const taskContainer = document.getElementById("task-container");
-taskContainer.appendChild(sectionTitle);
 //Slider logic
 // function to set a given theme/color-scheme
 function setTheme(themeName) {
@@ -47,4 +44,5 @@ document.getElementById("menu-btn").addEventListener("click", () => {
   toggleSidebar();
 });
 
+setTitle("All Tasks");
 toggle.init();
