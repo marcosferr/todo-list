@@ -243,3 +243,33 @@ article {
 .btn-primary {
   background-color: var(--bg-terciary);
 }
+.task {
+  display: flex;
+  width: 100%;
+  padding: 10px;
+  border: var(--bg-terciary) 2px solid;
+  border-radius: 5px;
+  align-items: center;
+}
+.task > input {
+  margin: 0 10px;
+}
+.task-text {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.right {
+  margin-left: auto;
+  display: flex;
+  gap: 15px;
+}
+.date {
+  border: var(--bg-terciary) 2px solid;
+  border-radius: 5px;
+  padding: 5px 3px;
+}
+.task-title {
+  font-size: 1.25rem;
+  font-weight: bold;
+}
