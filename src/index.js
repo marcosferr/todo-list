@@ -1,7 +1,11 @@
 import "./styles/reset.css";
 import "./styles/styles.css";
 import toggle from "./view/toggleGroup.js";
-import { setTitle } from "./view/viewController";
+import {
+  setTitle,
+  addProjectInput,
+  closeAddProject,
+} from "./view/viewController";
 toggle.init(".toggle-group");
 // import json from './data.json5';
 
@@ -42,6 +46,15 @@ function toggleSidebar() {
 }
 document.getElementById("menu-btn").addEventListener("click", () => {
   toggleSidebar();
+});
+document.getElementById("add-project-btn").addEventListener("click", () => {
+  addProjectInput();
+});
+document.getElementById("add-project-btn").addEventListener("click", () => {
+  addProjectInput();
+});
+document.getElementById("add-project-btn").addEventListener("click", () => {
+  addProjectInput();
 });
 
 setTitle("All Tasks");
